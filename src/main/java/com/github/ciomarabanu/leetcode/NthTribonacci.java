@@ -6,7 +6,7 @@ public class NthTribonacci {
 
         if (n < 2) return n;
 
-        for (int i = 3; i <= n ; i++) {
+        for (int i = 3; i <= n; i++) {
             int next = first + second + third;
             first = second;
             second = third;

@@ -4,9 +4,9 @@ import java.util.*;
 
 public class RandomizedSet {
 
-    private List<Integer> elems = new ArrayList<>();
-    private Map<Integer, Integer> elemToIdx = new HashMap<>();
-    private Random randomIdx = new Random();
+    private final List<Integer> elems = new ArrayList<>();
+    private final Map<Integer, Integer> elemToIdx = new HashMap<>();
+    private final Random randomIdx = new Random();
 
     public boolean insert(int val) {
         if (elemToIdx.containsKey(val))

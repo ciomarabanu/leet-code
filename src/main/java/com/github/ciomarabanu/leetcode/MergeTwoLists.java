@@ -2,25 +2,6 @@ package com.github.ciomarabanu.leetcode;
 
 public class MergeTwoLists {
 
-    //     Definition for singly-linked list.
-    public class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode() {
-        }
-
-        ListNode(int val) {
-            this.val = val;
-        }
-
-        ListNode(int val, ListNode next) {
-            this.val = val;
-            this.next = next;
-        }
-    }
-
-
     public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
 
         if (l2 == null && l1 == null) {
@@ -62,5 +43,23 @@ public class MergeTwoLists {
             last.next = l1;
         }
         return head;
+    }
+
+    //     Definition for singly-linked list.
+    public class ListNode {
+        int val;
+        ListNode next;
+
+        ListNode() {
+        }
+
+        ListNode(int val) {
+            this.val = val;
+        }
+
+        ListNode(int val, ListNode next) {
+            this.val = val;
+            this.next = next;
+        }
     }
 }

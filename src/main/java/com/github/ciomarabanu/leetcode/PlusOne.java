@@ -1,6 +1,5 @@
 package com.github.ciomarabanu.leetcode;
 
-import java.sql.Array;
 import java.util.Arrays;
 
 public class PlusOne {
@@ -34,7 +33,7 @@ public class PlusOne {
 
     private static boolean mustElongate(int[] digits) {
         for (int digit : digits) {
-            if (digit != 9){
+            if (digit != 9) {
                 return false;
             }
         }

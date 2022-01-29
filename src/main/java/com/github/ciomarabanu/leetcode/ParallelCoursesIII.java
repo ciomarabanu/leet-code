@@ -5,6 +5,8 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 public class ParallelCoursesIII {
+    Map<Integer, Integer> savedCoursesDuration = new HashMap<>();
+
     public int minimumTime(int n, int[][] relations, int[] time) {
         var adjList = Arrays.stream(relations).collect(
                 Collectors.groupingBy(r -> r[1],
@@ -16,8 +18,6 @@ public class ParallelCoursesIII {
                 .map(courseID -> courseDuration(courseID, adjList, time))
                 .max().orElse(0);
     }
-
-    Map<Integer, Integer> savedCoursesDuration = new HashMap<>();
 
     private int courseDuration(int course, Map<Integer, List<Integer>> graph, int[] time) {
         return savedCoursesDuration.computeIfAbsent(course, c ->

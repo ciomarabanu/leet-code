@@ -8,6 +8,7 @@ public class PascalsTriangle2 {
     public static void main(String[] args) {
         System.out.println(getRow(5));
     }
+
     public static List<Integer> getRow(int rowIndex) {
         var prevRow = new ArrayList<Integer>();
         prevRow.add(1);

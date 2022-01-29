@@ -11,20 +11,20 @@ public class MaximumNoOfballoons {
         var o = 0;
         var n = 0;
 
-        for (var letter : text.toCharArray()){
-            if (letter == 'b'){
+        for (var letter : text.toCharArray()) {
+            if (letter == 'b') {
                 b++;
             }
-            if (letter == 'a'){
+            if (letter == 'a') {
                 a++;
             }
-            if (letter == 'l'){
+            if (letter == 'l') {
                 l++;
             }
-            if (letter == 'o'){
+            if (letter == 'o') {
                 o++;
             }
-            if (letter == 'n'){
+            if (letter == 'n') {
                 n++;
             }
         }

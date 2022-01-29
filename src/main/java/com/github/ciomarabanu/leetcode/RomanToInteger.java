@@ -7,6 +7,7 @@ public class RomanToInteger {
     public static void main(String[] args) {
         System.out.println(romanToInt("MCMXCIV"));
     }
+
     public static int romanToInt(String s) {
         var romanNumerals = new HashMap<String, Integer>();
         romanNumerals.put("I", 1);
@@ -22,15 +23,15 @@ public class RomanToInteger {
         var workingNum = s.toCharArray();
         var result = 0;
 
-        for (int i = 0; i < working.length; i++){
-            if (i == working.length-1){
-                result += (int)working[i];
+        for (int i = 0; i < working.length; i++) {
+            if (i == working.length - 1) {
+                result += (int) working[i];
                 break;
             }
-            if ((int)working[i] < (int)working[i+1]){
-                result -= (int)working[i];
+            if ((int) working[i] < (int) working[i + 1]) {
+                result -= (int) working[i];
             } else {
-                result += (int)working[i];
+                result += (int) working[i];
             }
         }
         return result;

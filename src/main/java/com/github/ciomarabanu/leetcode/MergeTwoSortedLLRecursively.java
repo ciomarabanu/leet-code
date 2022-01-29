@@ -5,6 +5,25 @@ public class MergeTwoSortedLLRecursively {
 //        System.out.println(merge());
     }
 
+    private static ListNode merge(ListNode A, ListNode B) {
+        if (A == null) {
+            return B;
+        }
+        if (B == null) {
+            return A;
+        }
+
+        if (A.val < B.val) {
+            A.next = merge(A.next, B);
+
+            return B;
+        } else {
+            B.next = merge(A, B.next);
+            return A;
+        }
+
+    }
+
     public class ListNode {
         int val;
         ListNode next;
@@ -20,24 +39,5 @@ public class MergeTwoSortedLLRecursively {
             this.val = val;
             this.next = next;
         }
-    }
-
-    private static ListNode merge (ListNode A, ListNode B){
-        if (A == null){
-            return B;
-        }
-        if (B == null){
-            return A;
-        }
-
-        if (A.val < B.val){
-            A.next = merge(A.next, B);
-
-            return B;
-        } else {
-            B.next = merge(A, B.next);
-            return A;
-        }
-
     }
 }

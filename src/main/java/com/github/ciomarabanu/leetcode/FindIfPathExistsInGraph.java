@@ -2,8 +2,8 @@ package com.github.ciomarabanu.leetcode;
 
 import com.github.ciomarabanu.leetcode.utils.DisjointSetUnion;
 
-import java.util.*;
 import java.util.Stack;
+import java.util.*;
 
 public class FindIfPathExistsInGraph {
     public boolean validPathBFS(int n, int[][] edges, int start, int end) {
@@ -26,12 +26,12 @@ public class FindIfPathExistsInGraph {
         Stack<Integer> toVisit = new Stack<>();
         toVisit.add(start);
 
-        while (!toVisit.isEmpty()){
+        while (!toVisit.isEmpty()) {
             var currNode = toVisit.pop();
             if (currNode == end)
                 return true;
-            for (var nei : graph.get(currNode)){
-                if (!visited.contains(nei)){
+            for (var nei : graph.get(currNode)) {
+                if (!visited.contains(nei)) {
                     toVisit.push(nei);
                     visited.add(nei);
                 }
@@ -40,15 +40,15 @@ public class FindIfPathExistsInGraph {
         return false;
     }
 
-    public boolean validPathUnionFind (int n, int[][] edges, int start, int end) {
+    public boolean validPathUnionFind(int n, int[][] edges, int start, int end) {
         var dsu = new DisjointSetUnion();
-        for (int i = 0; i < n; i++){
+        for (int i = 0; i < n; i++) {
             dsu.initializeParent(i);
         }
-        for (var edge : edges){
+        for (var edge : edges) {
             var parent1 = dsu.find(edge[0]);
             var parent2 = dsu.find(edge[1]);
-            if (parent1 != parent2){
+            if (parent1 != parent2) {
                 dsu.union(parent1, parent2);
             }
         }

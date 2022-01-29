@@ -1,8 +1,18 @@
 package com.github.ciomarabanu.leetcode;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class DetectSquares {
+
+    Map<String, Integer> pointsCount;
+    List<int[]> points;
+    public DetectSquares() {
+        pointsCount = new HashMap<>();
+        points = new ArrayList<>();
+    }
 
     public static void main(String[] args) {
         int[] arr1 = new int[]{3, 10};
@@ -18,14 +28,6 @@ public class DetectSquares {
         System.out.println(problem.count(new int[]{11, 10}));
     }
 
-    Map<String, Integer> pointsCount;
-    List<int[]> points;
-
-    public DetectSquares() {
-        pointsCount = new HashMap<>();
-        points = new ArrayList<>();
-    }
-
     public void add(int[] point) {
         var pointKey = point[0] + "#" + point[1];
         pointsCount.put(pointKey, pointsCount.getOrDefault(pointKey, 0) + 1);
@@ -37,8 +39,8 @@ public class DetectSquares {
         for (int[] p3 : points) {
             if (p3[0] != p1[0] && Math.abs(p3[0] - p1[0]) == Math.abs(p3[1] - p1[1])) {
 
-                var p2Key =  p3[0] + "#" + p1[1];
-                var p4Key =  p1[0] + "#" + p3[1];
+                var p2Key = p3[0] + "#" + p1[1];
+                var p4Key = p1[0] + "#" + p3[1];
 
                 counter += pointsCount.getOrDefault(p2Key, 0) *
                         pointsCount.getOrDefault(p4Key, 0);

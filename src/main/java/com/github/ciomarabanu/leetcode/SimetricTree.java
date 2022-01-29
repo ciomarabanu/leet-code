@@ -1,6 +1,20 @@
 package com.github.ciomarabanu.leetcode;
 
 public class SimetricTree {
+    public static boolean isSymmetric(TreeNode root) {
+        return isMirror(root.left, root.right);
+    }
+
+    public static boolean isMirror(TreeNode t1, TreeNode t2) {
+        if (t1 == null && t2 == null) {
+            return true;
+        }
+        if (t1 == null || t2 == null || t1.val != t2.val) {
+            return false;
+        }
+        return isMirror(t1.left, t2.right) && isMirror(t1.right, t2.left);
+    }
+
     public class TreeNode {
         int val;
         TreeNode left;
@@ -18,19 +32,5 @@ public class SimetricTree {
             this.left = left;
             this.right = right;
         }
-    }
-
-    public static boolean isSymmetric(TreeNode root) {
-        return isMirror(root.left, root.right);
-    }
-
-    public static boolean isMirror(TreeNode t1, TreeNode t2){
-        if (t1 == null && t2 == null){
-            return true;
-        }
-        if (t1 == null || t2 == null || t1.val != t2.val) {
-            return false;
-        }
-        return isMirror(t1.left, t2.right) && isMirror(t1.right, t2.left);
     }
 }

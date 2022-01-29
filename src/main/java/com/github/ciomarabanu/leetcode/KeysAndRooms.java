@@ -8,10 +8,10 @@ public class KeysAndRooms {
         visitedOrWillVisit.add(0);
         Queue<Integer> toVisit = new LinkedList<>(Collections.singletonList(0));
 
-        while (!toVisit.isEmpty()){
+        while (!toVisit.isEmpty()) {
             var currRoom = toVisit.poll();
-            for (var key : rooms.get(currRoom)){
-                if (!visitedOrWillVisit.contains(key)){
+            for (var key : rooms.get(currRoom)) {
+                if (!visitedOrWillVisit.contains(key)) {
                     toVisit.offer(key);
                     visitedOrWillVisit.add(key);
                 }

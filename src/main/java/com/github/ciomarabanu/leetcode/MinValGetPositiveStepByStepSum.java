@@ -2,8 +2,9 @@ package com.github.ciomarabanu.leetcode;
 
 public class MinValGetPositiveStepByStepSum {
     public static void main(String[] args) {
-        System.out.println(minStartValue(new int[] {1,2}));
+        System.out.println(minStartValue(new int[]{1, 2}));
     }
+
     public static int minStartValue(int[] nums) {
         int startValue = 1;
         int currSum = 0;

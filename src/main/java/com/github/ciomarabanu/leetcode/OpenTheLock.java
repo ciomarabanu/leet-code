@@ -8,6 +8,18 @@ public class OpenTheLock {
         System.out.println(neighbours("0000"));
     }
 
+    private static List<String> neighbours(String root) {
+        var result = new ArrayList<String>();
+        for (int i = 0; i <= 3; i++) {
+            int prevDigit = root.charAt(i) - '0';
+            String suffix = root.substring(i + 1);
+            String prefix = root.substring(0, i);
+            result.add(prefix + Math.floorMod(prevDigit + 1, 10) + suffix);
+            result.add(prefix + Math.floorMod(prevDigit - 1, 10) + suffix);
+        }
+        return result;
+    }
+
     public int openLock(String[] deadends, String target) {
         var visited = new HashSet<>(Arrays.asList(deadends));
         String initialLock = "0000";
@@ -34,21 +46,10 @@ public class OpenTheLock {
         return -1;
     }
 
-    private static List<String> neighbours(String root) {
-        var result = new ArrayList<String>();
-        for (int i = 0; i <= 3; i++) {
-            int prevDigit = root.charAt(i) - '0';
-            String suffix = root.substring(i + 1);
-            String prefix = root.substring(0, i);
-            result.add(prefix + Math.floorMod(prevDigit + 1, 10) + suffix);
-            result.add(prefix + Math.floorMod(prevDigit - 1, 10) + suffix);
-        }
-        return result;
-    }
-
     class Combination {
         String digits;
         int steps;
+
         public Combination(String digits, int steps) {
             this.digits = digits;
             this.steps = steps;
