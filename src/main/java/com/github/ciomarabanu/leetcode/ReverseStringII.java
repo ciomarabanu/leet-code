@@ -5,9 +5,7 @@ public class ReverseStringII {
         System.out.println(reverseStr("abcdefg", 3));
     }
     public static String reverseStr(String s, int k) {
-        if (s.length() < k) {
-            return new StringBuilder(s).reverse().toString();
-        }
+
         StringBuilder result = new StringBuilder();
         var begIdx = 0;
         while (begIdx <= s.length()) {
